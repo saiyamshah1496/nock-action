@@ -1,0 +1,39 @@
+name: "Nock — Estate-aware Postgres DDL"
+description: "Approve or block Postgres DDL in PRs from your estate and policy. Never applies migrations."
+author: "Nock"
+branding:
+  icon: "shield"
+  color: "purple"
+runs:
+  using: "node20"
+  main: "dist/index.js"
+inputs:
+  migration-path:
+    description: "Path or glob for migration SQL files"
+    required: false
+    default: "migrations/"
+  estate-path:
+    description: "Path to estate.json (file mode)"
+    required: false
+    default: ".nock/estate.json"
+  estate-api-url:
+    description: "Optional: GET URL for hosted estate API (Nock Team)"
+    required: false
+  estate-api-token:
+    description: "Optional: Bearer token for hosted estate API"
+    required: false
+  api-base-url:
+    description: "Optional: Override API base (defaults to origin from estate-api-url)"
+    required: false
+  policy-path:
+    description: "Path to policy.yml (YAML or JSON)"
+    required: false
+    default: "policy.default.yml"
+  fail-on:
+    description: "Fail on red|yellow"
+    required: false
+    default: "red"
+  github-token:
+    description: "GitHub token for PR comments"
+    required: true
+
