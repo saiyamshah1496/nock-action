@@ -1,5 +1,5 @@
-name: "Nock — Estate-aware Postgres DDL"
-description: "Approve or block Postgres DDL in PRs from your estate and policy. Never applies migrations."
+name: "Nock — Postgres migration safety"
+description: "Fail PRs on unsafe Postgres DDL using your table sizes and policy"
 author: "Nock"
 branding:
   icon: "shield"
